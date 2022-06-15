@@ -2,12 +2,12 @@
     if(!isset($_SESSION)){
         session_start();
     }
-    // if($_SESSION['tipoUsuario'] === 'usuario'){
-    //     header('location: ../../index.php');
-    // }
-    // if(!$_SESSION['login']){
-    //     header('location: ../../index.php');
-    // }
+    if($_SESSION['tipoUsuario'] === 'usuario'){
+        header('location: ../../index.php');
+    }
+    if(!$_SESSION['login']){
+        header('location: ../../index.php');
+    }
     // Imports importantes
     include '../../utilidades/heading.php';
     require '../../utilidades/database.php';
