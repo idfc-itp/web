@@ -4,7 +4,6 @@
     if($_SESSION['tipoUsuario'] === 'usuario'){
         header('location: ../index.php');
     }
-
     if(!$_SESSION['login']){
         header('location: ../index.php');
     }
@@ -25,6 +24,7 @@
             $resultado = mysqli_query($db, $query);
             $libro = mysqli_fetch_assoc($resultado);
             unlink($libro['rutaLibro']);
+
             // Consulta para eliminar el libro de la base de datos
             $query = "DELETE FROM libros WHERE idLibro = ${id};";
             $resultado = mysqli_query($db, $query);
@@ -32,9 +32,7 @@
                 header('location: /admin/index.php?resultado=3');
             }
         }
-    }   
-
-
+    }
 ?>
 
 <main class="admin">
@@ -47,9 +45,14 @@
                 <div class="alert success">Libro Actualizado Correctamente</div>
                 <?php } elseif( intval($resultado) === 3 ){?>    
                 <div class="alert success">Libro Eliminado Correctamente</div>
+                <?php } elseif( intval($resultado) === 4 ){?>    
+                <div class="alert success">Usuario Actualizado Correctamente</div>
+                <?php } elseif( intval($resultado) === 5 ){?>    
+                <div class="alert success">Usuario Eliminado Correctamente</div>
                 <?php } ?>
         <nav class="navegacion">
             <a href="./libros/crear.php" class="navegacion__link">Nuevo Libro</a>
+            <a href="./libros/usuarios.php" class="navegacion__link">Ver Usuarios</a>
         </nav>
         <div class="admin__tabla">
             <table class="libros">

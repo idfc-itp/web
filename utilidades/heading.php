@@ -23,9 +23,8 @@
                     <a href="/" class="header__link">BiblioTec</a>
                 </div>
                 <nav class="nav">
-                    <a href="#categorias" class="nav__link">Mi Perfil</a>
                     <?php if($_SESSION['login']){ ?>
-                        <a href="cerrarSesion.php" class="nav__link">Cerrar Sesión</a>
+                        <a href="/cerrarSesion.php" class="nav__link">Cerrar Sesión</a>
                     <?php }?>
                 </nav>
             </div>

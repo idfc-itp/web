@@ -19,14 +19,14 @@
         }
         if(empty($errores)){
             // Query para revisar si un usuario existe
-            $query = "SELECT * FROM usuarios Where nombreUsuario = '$usuarioNombre';";
+            $query = "SELECT * FROM usuarios WHERE nombreUsuario = '$usuarioNombre';";
             $consulta = mysqli_query($db, $query);
-
             if($consulta->num_rows){
                 $usuario = mysqli_fetch_assoc($consulta);
-                
-                // Verifica si el password es correcto
+
+                //Verifica si el password es correcto
                 $correcto = password_verify($pass, $usuario['password']);
+
                 // Password erroneo
                 if(!$correcto){
                     $errores[] = 'Contraseña Incorrecta';
@@ -76,13 +76,18 @@
                 <div class="login__content">
                     <form method="POST">
                         <legend class="login__legend">Email y Password</legend>
-
-                        <label for="usuario" class="formulario__label">Usuario: </label>
-                        <input type="text" name="usuario" class="formulario__input" value="<?php echo $usuarioNombre;?>">
-                        <label for="password" class="formulario__label">Contraseña: </label>
-                        <input type="password" name="password" class="formulario__input">
-                        <input type="submit" value="Iniciar Sesión" class="form__button input-submit">
-                        <a href="./register.php" class="form__button">Crear Cuenta</a>
+                        <div class="input">
+                            <label for="usuario" class="formulario__label">Usuario: </label>
+                            <input type="text" name="usuario" class="formulario__input" value="<?php echo $usuarioNombre;?>">
+                        </div>
+                        <div class="input">
+                            <label for="password" class="formulario__label">Contraseña: </label>
+                            <input type="password" name="password" class="formulario__input">
+                        </div>
+                        <div class="form__buttons">
+                            <input type="submit" value="Iniciar Sesión" class="form__button input-submit">
+                            <a href="./register.php" class="form__button">Crear Cuenta</a>
+                        </div>
                     </form>
                 </div>
             </div>

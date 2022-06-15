@@ -8,7 +8,6 @@ function obtenerLibros() : array{
         //Redacción de la consulta
         $sql = "Select * from libros;";
         $consulta = mysqli_query( $db, $sql );
-        
         $libros = [];
         $i = 0;
         //Obtención de resultados
@@ -32,38 +31,20 @@ function obtenerUsuarios() : array{
     try {
         require 'database.php';
         $db = conectarDB();
-        $sql = "SELECT * FROM usuarios where tipoUsuario = 'usuario';";
-        $consulta = mysqli_query($db, $sql);
+        $db->set_charset("utf8");
+        $query = "SELECT * FROM usuarios;";
+        $resultado = mysqli_query($db, $query);
         $usuarios = [];
         $i = 0;
-        while($row = mysqli_fetch_assoc($consulta)){
+        while( $row = mysqli_fetch_assoc($resultado)){
             $usuarios[$i]['nombre'] = $row['nombre'];
             $usuarios[$i]['idUsuario'] = $row['idUsuario'];
             $usuarios[$i]['apellido'] = $row['apellido'];
             $usuarios[$i]['tipoUsuario'] = $row['tipoUsuario'];
+            $usuarios[$i]['nombreUsuario'] = $row['nombreUsuario'];
             $i++;
         }
-        return $usuarios;
-    } catch (\Throwable $th) {
-        echo $th;
-    }
-    mysqli_close($db);
-}
-
-function obtenerDescargas() : array{
-    try {
-        require 'database.php';
-        $db = conectarDB();
-        $sql = "SELECT * FROM descargas;";
-        $consulta = mysqli_query($db, $sql);
-        $descargas = [];
-        $i = 0;
-        while($row = mysqli_fetch_assoc($consulta)){
-            $descargas[$i]['idUsuario'] = $row['idUsuario'];
-            $descargas[$i]['idLibro'] = $row['idLibro'];
-            $i++;
-        }
-        return $descargas;
+    return $usuarios;
     } catch (\Throwable $th) {
         echo $th;
     }

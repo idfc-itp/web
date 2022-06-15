@@ -45,6 +45,7 @@ img{
     margin: 1rem 0;
     font-weight: 600;
     text-align: center;
+    text-transform: uppercase;
 }
 .error{
     background-color: rgb(194, 12, 12);
@@ -192,7 +193,12 @@ img{
     margin: 2rem 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+}
+@media (min-width: 992px) { 
+    .libro__contenido{
+        justify-content: space-between;
+    }
 }
 .libro__link{
     font-weight: 500;
@@ -204,8 +210,8 @@ img{
 }
 .libro__link:hover{
     cursor: pointer;
-    color: var(--naranja);
-    background-color: var(--blanco);
+    color: var(--blanco);
+    background-color: var(--naranja);
 }
 .libro__span{
     font-weight: 600;
@@ -228,6 +234,8 @@ img{
     text-align: center;
     color: var(--blanco);
     font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 .login__parent{
     display: flex;
@@ -247,6 +255,7 @@ img{
     color: var(--azulClaro);
     text-align: center;
     margin-bottom: 1rem;
+    font-size: 2rem;
 }
 .input{
     display: flex;
@@ -272,6 +281,7 @@ img{
 }
 .form__button{
     padding: 1rem 1.5rem;
+    font-weight: 500;
 }
 .formulario__button{
     padding: .5rem 1rem;
@@ -279,6 +289,10 @@ img{
 .form__button:hover, .formulario__button:hover{
     cursor: pointer;
     background-color: var(--azulClaro);
+}
+.input-submit{
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
 }
 /* Estilos del formulario de registro */
 .registro{
@@ -361,14 +375,14 @@ img{
 .sidebar__link-selected{
     color: var(--naranja);
 }
-.libros{
+.libros, .usuarios{
     margin-top: 2rem;
     width: 20%;
     border-spacing: 0;
     font-size: 1rem;
 }
 @media (min-width: 992px) { 
-    .libros{
+    .libros, .usuarios{
         width: 100%;
         font-size: 1.6rem;
     }
@@ -380,7 +394,7 @@ th{
     color: var(--blanco);
     padding: 1rem;
 }
-.libros__borrar{
+.libros__borrar, .usuarios__borrar{
     padding: .5rem;
     background-color: rgb(194, 12, 12);
     border: none;
@@ -390,19 +404,19 @@ th{
 }
 
 @media (min-width: 992px) { 
-    .libros__borrar{
+    .libros__borrar, .usuarios__borrar{
         font-size: 1.6rem;
     }
 }
-.libros__borrar:hover{
+.libros__borrar:hover, .usuarios__borrar:hover{
     background-color: rgb(134, 5, 5);
 }
-.libros__editar{
+.libros__editar, .usuarios__editar{
     padding: .5rem;
     background-color: var(--azulClaro);
     transition: .5s ease;
 }
-.libros__editar:hover{
+.libros__editar:hover, .usuarios__editar:hover{
     background-color: #26307a;
 }
 .enlace:hover{

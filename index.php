@@ -26,7 +26,6 @@
                     <a id="link" href="/" class="header__link ">BiblioTec</a>
                 </div>
                 <nav class="nav">
-                    <a id="link" href="" class="nav__link">Mi Perfil</a>
                     <?php if($_SESSION['login']){ ?>
                         <a href="cerrarSesion.php" id="link" class="nav__link">Cerrar Sesión</a>
                     <?php }?>
