@@ -12,10 +12,9 @@ window.onload = ()=>{
 
 async function consultarLibros(){
     try {
-        const url = 'http://localhost:5000/libros.php';
+        const url = './libros.php';
         const resultado = await fetch(url);
         const libros = await resultado.json();
-        console.log(libros);
         mostrarLibros(libros);   
     } catch (error) {
         console.log(error);

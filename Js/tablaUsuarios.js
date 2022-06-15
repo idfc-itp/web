@@ -2,7 +2,7 @@ window.onload = ()=>{
     consultarUsuarios();
 }
 async function consultarUsuarios(){
-    const url = 'http://localhost:5000/usuarios.php';
+    const url = '../../usuarios.php';
     try {
         const resultado = await fetch(url);
         const usuarios = await resultado.json();
