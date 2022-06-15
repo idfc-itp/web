@@ -1,0 +1,468 @@
+/* Estilos globales */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+*::after, *::before{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    font-size: 1.6rem;
+    color: var(--negro);
+}
+[class$="__container"]{
+    max-width: 120rem;
+    width: 85%;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+[class$="-degradado"]{
+    background: linear-gradient(170deg, hsl(0, 0%, 22%)0%, hsl(0, 0%, 6%)30%);
+}
+button{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+}
+a{
+    text-decoration: none;
+    color: var(--negro);
+}
+img{
+    width: 100%;
+    height: auto;
+}
+.alert{
+    display: block;
+    border-radius: .5rem;
+    padding: 1rem 1rem;
+    color: var(--blanco);
+    width: 100%;
+    margin: 1rem 0;
+    font-weight: 600;
+    text-align: center;
+}
+.error{
+    background-color: rgb(194, 12, 12);
+}
+.success{
+    background-color: rgb(12, 194, 12);
+}
+.link__active{
+    color: var(--naranja);
+}
+/* variables */
+:root{
+    --azulClaro: #2A4DC7;
+    --azulMarino: #242A54;
+    --naranja: #DC7520;
+    --blanco: #FCFCFC;
+    --negro: hsl(0, 0%, 6%);
+    --gris: #e8e8e8;
+}
+/* Header */
+.header{
+    background-color: transparent;
+}
+.header .hero{
+    height: 100vh;
+}
+#link{
+    color: var(--blanco);
+}
+/* @media (min-width: 992px) { 
+    .header{
+        height: 12vh;
+    }
+} */
+.header__flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+}
+@media (min-width: 992px) { 
+    .header__flex{ 
+        display: flex;   
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.header a{
+    position: relative;
+}
+.nav{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+@media (min-width: 992px) { 
+    .nav{
+        flex-direction: row;
+        gap: 4rem;
+    }
+}
+.nav__link, .header__link{
+    transition: .4s ease;
+}
+.nav__link:hover, .header__link:hover{
+    color: var(--naranja);
+}
+.header__link{
+    font-weight: 700;
+    font-size: 2rem;
+}
+/* Index */
+.body{
+    background-color: var(--gris);
+}
+.hero{
+    background-image: url('../img/bilbioteca.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+@media (min-width: 992px) { 
+    .hero{
+        height: 88vh;
+    }
+}
+.hero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.hero__titulo{
+    color: var(--blanco);
+    position: relative;
+    text-align: center;
+    top: 25rem;
+    bottom: 50%;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+/* Estilos de la sección Libros */
+.libros{
+    padding: 2rem;
+}
+.libros__contenido{
+    background-color: var(--blanco);
+    position: relative;
+    margin-top: -16rem;
+    padding: 2rem;
+    border-radius: .4rem;
+}
+@media (min-width: 992px) { 
+    .libros__contenido{
+        margin-top: -10rem;
+    }
+}
+.libros__grid{
+    display: grid;
+    gap: 1rem;
+}
+@media (min-width: 992px) { 
+    .libros__grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+    }
+}
+.libro{
+    margin: 1rem 0;
+    box-shadow: var(--azulMarino) 5px 5px, var(--azulClaro) 10px 10px;
+    border-radius: .5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.libro__contenido{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.libro__link{
+    font-weight: 500;
+    transition: .4s ease;
+    padding: 1rem;
+    background-color: var(--negro);
+    color: var(--blanco);
+    border-radius: .4rem;
+}
+.libro__link:hover{
+    cursor: pointer;
+    color: var(--naranja);
+    background-color: var(--blanco);
+}
+.libro__span{
+    font-weight: 600;
+}
+/* Formulario general */
+.formulario{
+    border: 1px solid var(--negro);
+    padding: 1rem;
+    margin: 1rem;
+}
+/* Login */
+.login{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.login__heading{
+    text-align: center;
+    color: var(--blanco);
+    font-weight: 600;
+}
+.login__parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+}
+.login__content{
+    width: 50rem;
+    height: 30rem;
+    background-color: var(--blanco);
+    padding: 4rem;
+    border-radius: .5rem;
+}
+.login__legend{
+    font-weight: 600;
+    color: var(--azulClaro);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.formulario__input{
+    width: 65%;
+    padding: .5rem;
+    margin: 1rem 0;
+}
+.form__buttons{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.form__button, .formulario__button{
+    border: none;
+    background-color: var(--azulMarino);
+    color: var(--blanco);
+    border-radius: .4rem;
+    transition: .4s ease;
+}
+.form__button{
+    padding: 1rem 1.5rem;
+}
+.formulario__button{
+    padding: .5rem 1rem;
+}
+.form__button:hover, .formulario__button:hover{
+    cursor: pointer;
+    background-color: var(--azulClaro);
+}
+/* Estilos del formulario de registro */
+.registro{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.registro__content{
+    background-color: var(--blanco);
+    padding: 2rem;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: .4rem;
+}
+/* Estilos de la página panelAdmin.php */
+/* Estilos del sidebar */
+.panel{
+    color: var(--negro);
+}
+.panel__grid{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (min-width: 768px) { 
+    .panel__grid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.panel__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+@media (min-width: 768px) { 
+    .panel__content{
+        grid-column: 2 / 5;
+        grid-row: 1 / 2;  
+    }
+}
+.panel-card{
+    width: 100%;
+    height: auto;
+    min-height: 20rem;
+    /* box-shadow: 1px 1px 1px 1px var(--negro); */
+    /* border: 1px solid #000; */
+    border-radius: .5rem;
+    padding: 3rem;
+}
+.sidebar{
+    background-color: var(--negro);
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+@media (min-width: 768px) { 
+    .sidebar{
+        grid-column: 1 / 2;
+        grid-row: 1/2;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+    }
+}
+.sidebar__link{
+    color: var(--blanco);
+    display: block;
+    transition: .4s ease;
+}
+.sidebar__link:hover{
+    color: var(--naranja);
+}
+.sidebar__link-selected{
+    color: var(--naranja);
+}
+.libros{
+    margin-top: 2rem;
+    width: 20%;
+    border-spacing: 0;
+    font-size: 1rem;
+}
+@media (min-width: 992px) { 
+    .libros{
+        width: 100%;
+        font-size: 1.6rem;
+    }
+}
+thead{
+    background-color: var(--azulMarino);
+}
+th{
+    color: var(--blanco);
+    padding: 1rem;
+}
+.libros__borrar{
+    padding: .5rem;
+    background-color: rgb(194, 12, 12);
+    border: none;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: .5s ease;
+}
+
+@media (min-width: 992px) { 
+    .libros__borrar{
+        font-size: 1.6rem;
+    }
+}
+.libros__borrar:hover{
+    background-color: rgb(134, 5, 5);
+}
+.libros__editar{
+    padding: .5rem;
+    background-color: var(--azulClaro);
+    transition: .5s ease;
+}
+.libros__editar:hover{
+    background-color: #26307a;
+}
+.enlace:hover{
+    cursor:pointer;
+}
+.admin{
+    font-size: 1rem;
+}
+@media (min-width: 992px) { 
+    .admin{
+        font-size: 1.6rem;
+    }
+}
+.admin__tabla{
+    max-width: 50%;
+    font-size: 1rem;
+}
+.admin__heading{
+    text-align: center;
+}
+@media (min-width: 992px) { 
+    .admin__tabla{
+        max-width: 100%;
+        font-size: 1.6rem;
+    }
+}
+.navegacion__link{
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    border-radius: .4rem;
+    transition: .5s ease;
+}
+.navegacion__link:hover{
+    background-color: #a5500b;
+    font-weight: 600;
+}
+/* Estilos de la página de Libro */
+.libro__info{
+    height: 79vh;
+    font-size: 2rem;
+}
+.libro__info__heading{
+    text-align: center;
+    color: var(--azulMarino);
+    font-size: 2.8rem;
+}
+.libro__info__autor{
+    font-size: 2rem;
+}
+.libro__info__span{
+    font-weight: 600;
+}
+.libro__info__desc{
+    text-align: justify;
+}
+/* Estilos del footer */
+.footer{
+    background-color: var(--negro);
+    color: var(--blanco);
+    text-align: center;
+}
