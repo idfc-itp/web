@@ -81,8 +81,9 @@
                     <?php echo $error; ?>
                 </div>
             <?php endforeach; ?>
-            
-        <a href="../index.php" class="formulario__button">Volver</a>
+        <div class="boton-contenedor">
+            <a href="../index.php" class="formulario__button boton-block">Volver</a>
+        </div>
         <form action="/admin/libros/crear.php" method="POST" class="formulario" enctype="multipart/form-data">
             <legend class="formulario__legend">Información General</legend>
             <div class="input">
@@ -97,7 +98,7 @@
 
             <div class="input">
                 <label for="descripcion">Descripcion: </label>
-                <textarea name="descripcion" id="descripcion" cols="30"rows="10"> <?php echo $descripcion;?> </textarea>
+                <textarea name="descripcion" id="descripcion"> <?php echo $descripcion;?> </textarea>
             </div>
 
             <div class="input">

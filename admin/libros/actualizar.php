@@ -83,7 +83,6 @@
                 $rutaReal = $libro['rutaLibro'];
             }
 
-            
             //Insert a la base de datos
             $query = "UPDATE Libros SET titulo = '$titulo', autor = '$autor', descripcion = '$descripcion', rutaLibro = '$rutaReal' WHERE idLibro = $id;";
         

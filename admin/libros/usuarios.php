@@ -28,7 +28,10 @@
 <main class="admin">
     <div class="admin__container">
         <h1 class="admin__heading">Administrador de Usuarios</h1>
-        <a href="../index.php" class="formulario__button">Volver</a>
+        <div class="boton-contenedor">
+            <a href="../index.php" class="formulario__button 
+            boton-block">Volver</a>
+        </div>
         <?php
             if( intval($resultado) === 1 ) {?>
                 <div class="alert success">Usuario Actualizado Correctamente</div>

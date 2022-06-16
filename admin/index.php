@@ -37,7 +37,7 @@
 
 <main class="admin">
     <div class="admin__container">
-        <h1 class="admin__heading">Administrador de BiblioTec</h1>
+        <h1 class="admin__heading">Administrador de Libros</h1>
         <?php
             if( intval($resultado) === 1 ) {?>
                 <div class="alert success">Libro Creado Correctamente</div>

@@ -41,7 +41,7 @@
         </section>
     </header>
 
-    <main class="libros">
+    <main class="libros-main">
         <div class="libros__container">
             <div class="libros__contenido">
                 <h2 class="libros__heading">Libros Disponibles</h2>

@@ -17,7 +17,7 @@ body{
 }
 [class$="__container"]{
     max-width: 120rem;
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
     padding: 3rem 0;
 }
@@ -67,13 +67,17 @@ img{
 }
 /* Header */
 .header{
-    background-color: transparent;
+    background-color: var(--negro);
 }
 .header .hero{
     height: 100vh;
 }
 #link{
     color: var(--blanco);
+    transition: .5s ease;
+}
+#link:hover{
+    color: var(--naranja);
 }
 /* @media (min-width: 992px) { 
     .header{
@@ -112,6 +116,7 @@ img{
 }
 .nav__link, .header__link{
     transition: .4s ease;
+    color: var(--blanco);
 }
 .nav__link:hover, .header__link:hover{
     color: var(--naranja);
@@ -130,6 +135,7 @@ img{
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    height: 60vh;
 }
 @media (min-width: 992px) { 
     .hero{
@@ -149,19 +155,19 @@ img{
     color: var(--blanco);
     position: relative;
     text-align: center;
-    top: 25rem;
-    bottom: 50%;
+    top: 15rem;
     text-transform: uppercase;
     font-weight: 600;
 }
 /* Estilos de la sección Libros */
-.libros{
+.libros-main{
     padding: 2rem;
+    width: 100%;
 }
 .libros__contenido{
     background-color: var(--blanco);
     position: relative;
-    margin-top: -16rem;
+    margin-top: -14rem;
     padding: 2rem;
     border-radius: .4rem;
 }
@@ -184,7 +190,7 @@ img{
     margin: 1rem 0;
     box-shadow: var(--azulMarino) 5px 5px, var(--azulClaro) 10px 10px;
     border-radius: .5rem;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -193,20 +199,30 @@ img{
     margin: 2rem 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 @media (min-width: 992px) { 
     .libro__contenido{
         justify-content: space-between;
     }
 }
+.libro__body{
+    display: flex;
+}
 .libro__link{
-    font-weight: 500;
+    font-weight: 400;
     transition: .4s ease;
-    padding: 1rem;
+    padding: .4rem;
+    font-size: 1.4rem;
     background-color: var(--negro);
     color: var(--blanco);
     border-radius: .4rem;
+}
+@media (min-width: 992px) { 
+    .libro__link{
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
 }
 .libro__link:hover{
     cursor: pointer;
@@ -376,10 +392,14 @@ img{
     color: var(--naranja);
 }
 .libros, .usuarios{
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 20%;
     border-spacing: 0;
     font-size: 1rem;
+}
+.usuarios{
+    margin-top: 2rem;
+    height: 57vh;
 }
 @media (min-width: 992px) { 
     .libros, .usuarios{
@@ -433,32 +453,99 @@ th{
 .admin__tabla{
     max-width: 50%;
     font-size: 1rem;
+    margin: 2rem auto;
 }
 .admin__heading{
     text-align: center;
+    margin: 1.2rem 0 2rem 0;
 }
 @media (min-width: 992px) { 
     .admin__tabla{
-        max-width: 100%;
+        max-width: 90%;
         font-size: 1.6rem;
     }
 }
+.boton-contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.navegacion{
+    display: flex;
+    justify-content: space-around;
+}
 .navegacion__link{
-    margin: 1rem 0;
-    padding: 1rem;
+    margin: 1rem;
+    padding: .5rem;
     background-color: var(--naranja);
     color: var(--blanco);
     border-radius: .4rem;
     transition: .5s ease;
+    text-align: center;
+}
+@media (min-width: 992px) { 
+    .navegacion__link{
+        padding: 1rem;
+    }
 }
 .navegacion__link:hover{
     background-color: #a5500b;
     font-weight: 600;
 }
+/* Estilos al fromulario de crear */
+.crear__heading{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.formulario{
+    padding: 1rem 2rem;
+    border: 2px solid var(--azulMarino);
+    border-radius: .5rem;
+
+}
+.formulario__legend{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: var(--azulMarino);
+}
+.input{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+label{
+    font-size: 1.98rem;
+}
+.formulario__input{
+    width: 70%;
+    height: 4rem;
+}
+#descripcion{
+    resize: none;
+    height: 10rem;
+    width: 70%;
+}
 /* Estilos de la página de Libro */
 .libro__info{
-    height: 79vh;
-    font-size: 2rem;
+    font-size: 1.7rem;
+    line-height: 2;
+}
+@media (min-width: 992px) { 
+    .libro__info{
+        font-size: 2rem;
+        line-height: 1.94;
+    }
+}
+@media (min-width: 1100px) { 
+    .libro__info{
+        font-size: 2rem;
+        line-height: 1.94;
+    }
 }
 .libro__info__heading{
     text-align: center;
@@ -479,4 +566,7 @@ th{
     background-color: var(--negro);
     color: var(--blanco);
     text-align: center;
+    position: absolute;
+    bottom: 100;
+    width: 100%;
 }
