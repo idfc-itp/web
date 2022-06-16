@@ -2,7 +2,8 @@
     if(!isset($_SESSION)){
         session_start();
     }
-
+    require '../utilidades/database.php';
+    $db = conectarDB();
 
 ?>
 <!DOCTYPE html>
@@ -18,16 +19,16 @@
     <title>BiblioTec</title>
 </head>
 <body>
-    <h1>Reporte del Sistema</h1>
-    <div class="admin__tabla">
-            <table class="libros">
+    <section class="reporte__container">
+        <h1 class="admin__heading">Reporte De Libros</h1>
+        <div class="admin__tabla">
+            <table class="libros" id="reporte-libros">
                 <thead class="libros__head">
                     <tr>
                         <th>ID</th>
                         <th>Titulo</th>
                         <th>Autor</th>
                         <th>Ruta del Libro</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody class="libros__body">
@@ -35,12 +36,13 @@
                 </tbody>
             </table>
         </div>
-        <script src="../Js/tablaLibros.js" type="module"></script>
+    </section>
+        <script src="../Js/reporteLibros.js" type="module"></script>
 </body>
 </html>
 
 <?php
-    $html = ob_get_clean();
+    // $html = ob_get_clean();
     // require_once './vendor/dompdf/autoload.inc.php';
     // use Dompdf\Dompdf;
     // $dompdf = new Dompdf;

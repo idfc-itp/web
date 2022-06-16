@@ -399,7 +399,13 @@ img{
 }
 .usuarios{
     margin-top: 2rem;
-    height: 57vh;
+    /* height: 57vh; */
+}
+.usuarios-reporte{
+    margin-top: 1rem;
+    width: 20%;
+    border-spacing: 0;
+    font-size: 1rem;
 }
 @media (min-width: 992px) { 
     .libros, .usuarios{
@@ -527,7 +533,7 @@ label{
 }
 #descripcion{
     resize: none;
-    height: 10rem;
+    height: 15rem;
     width: 70%;
 }
 /* Estilos de la página de Libro */
