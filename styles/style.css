@@ -476,6 +476,7 @@ th{
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 4rem;
 }
 .navegacion{
     display: flex;

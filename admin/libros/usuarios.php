@@ -31,6 +31,8 @@
         <div class="boton-contenedor">
             <a href="../index.php" class="formulario__button 
             boton-block">Volver</a>
+            <a href="../reporteUsuarios.php" class="formulario__button 
+            boton-block">Generar Reporte</a>
         </div>
         <?php
             if( intval($resultado) === 1 ) {?>

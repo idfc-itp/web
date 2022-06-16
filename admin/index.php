@@ -53,6 +53,7 @@
         <nav class="navegacion">
             <a href="./libros/crear.php" class="navegacion__link">Nuevo Libro</a>
             <a href="./libros/usuarios.php" class="navegacion__link">Ver Usuarios</a>
+            <a href="reporte.php" class="navegacion__link">Generar Reporte</a>
         </nav>
         <div class="admin__tabla">
             <table class="libros">
